@@ -2,7 +2,7 @@
   "name": "Expressweb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.17.2",
     "hbs": "^4.2.0",
