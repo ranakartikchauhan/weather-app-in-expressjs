@@ -174,7 +174,7 @@ body {
 .tempInformation {
   width: 40rem;
   margin: auto;
-  max-height: 20rem;
+  min-height: 20rem;
   background-color: #323544;
   border-radius: 1rem;
   padding: 1rem;
