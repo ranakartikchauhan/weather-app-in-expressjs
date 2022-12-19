@@ -1,4 +1,4 @@
 # weather app in express js
 This is a weather app using Express Js
 Live Demo
-https://ranakartikweather.herokuapp.com/
+https://vast-erin-chameleon-yoke.cyclic.app/
