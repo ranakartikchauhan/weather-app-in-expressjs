@@ -3,25 +3,7 @@ const express = require('express');
 const app = express();
 const hbs = require('hbs');
 const port = process.env.PORT || 8000;
-const { DateTimeFormat } = Intl;
 
-// Get the current date and time
-const currentDate = new Date();
-
-// Get the time zone offset in minutes
-const timeZoneOffset = currentDate.getTimezoneOffset();
-
-// Calculate the time zone offset in hours and minutes
-const offsetHours = Math.abs(Math.floor(timeZoneOffset / 60));
-const offsetMinutes = Math.abs(timeZoneOffset % 60);
-
-// Determine the sign of the time zone offset
-const offsetSign = timeZoneOffset > 0 ? '-' : '+';
-
-// Format the time zone offset as a string
-const formattedTimeZoneOffset = `${offsetSign}${String(offsetHours).padStart(2, '0')}:${String(offsetMinutes).padStart(2, '0')}`;
-
-console.log(`Current time zone offset: GMT${formattedTimeZoneOffset}`);
 
 
 const static_path = path.join(__dirname, "../public");
@@ -45,6 +27,25 @@ app.get("/about", (req,res) =>{
 
 
 app.get("/weather", (req,res) =>{
+    const { DateTimeFormat } = Intl;
+
+// Get the current date and time
+const currentDate = new Date();
+
+// Get the time zone offset in minutes
+const timeZoneOffset = currentDate.getTimezoneOffset();
+
+// Calculate the time zone offset in hours and minutes
+const offsetHours = Math.abs(Math.floor(timeZoneOffset / 60));
+const offsetMinutes = Math.abs(timeZoneOffset % 60);
+
+// Determine the sign of the time zone offset
+const offsetSign = timeZoneOffset > 0 ? '-' : '+';
+
+// Format the time zone offset as a string
+const formattedTimeZoneOffset = `${offsetSign}${String(offsetHours).padStart(2, '0')}:${String(offsetMinutes).padStart(2, '0')}`;
+
+console.log(`Current time zone offset: GMT${formattedTimeZoneOffset}`);
     res.render('weather')
 })
 
